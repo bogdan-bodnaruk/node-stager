@@ -1,0 +1,10 @@
+{
+  "cwd"         : "~/Projects/test_dir/",
+  "script"      : "/index.js",
+  "watch"       : false,
+  "instances"   : 1,
+  "max_memory_restart" : "150M",
+  "env": {
+    "NODE_ENV" : "production"
+  }
+}

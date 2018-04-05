@@ -1,0 +1,4 @@
+<VirtualHost {branch}.{domain}:80>
+    ServerName {branch}.{domain}
+    DocumentRoot {appDir}
+</VirtualHost>

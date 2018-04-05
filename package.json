@@ -1,0 +1,32 @@
+{
+  "name": "node-stager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:babak49/node-brancher.git",
+  "author": "Lubomyr Grynyshyn <grynysh@gmail.com>, Bogdan Bodnaruk <babak.47031@gmail.com>",
+  "license": "MIT",
+  "preferGlobal": true,
+  "scripts": {
+    "lint": "eslint ./bin/ ./lib/ --ext .js",
+    "lint:fix": "eslint ./bin/ ./lib/ --ext .js --fix --cache"
+  },
+  "bin": {
+    "stager": "./bin/stager.js"
+  },
+  "dependencies": {
+    "colors": "^1.2.1",
+    "commander": "^2.11.0",
+    "deep-assign": "^2.0.0",
+    "find-free-port": "^1.2.0",
+    "pm2": "^2.10.1",
+    "shelljs": "^0.7.8",
+    "string-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}

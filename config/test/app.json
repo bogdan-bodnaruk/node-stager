@@ -1,0 +1,21 @@
+{
+  "git": "git@bitbucket.org:zetyara/test.git",
+  "defaultBranch": "master",
+  "pruneOnDeployOrUpdate": true,
+  "apache": true,
+  "domain": "test.com",
+  "ports": {
+    "start": 10000,
+    "end": 101000
+  },
+  "deploy": {
+    "before": [
+      "ll",
+      "pm2 -version"
+    ],
+    "after": [
+      "ls",
+      "pm2 list"
+    ]
+  }
+}
