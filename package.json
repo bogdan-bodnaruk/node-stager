@@ -2,7 +2,7 @@
   "name": "node-stager",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:babak49/node-brancher.git",
+  "repository": "git@github.com:babak49/node-stager.git",
   "author": "Lubomyr Grynyshyn <grynysh@gmail.com>, Bogdan Bodnaruk <babak.47031@gmail.com>",
   "license": "MIT",
   "preferGlobal": true,
