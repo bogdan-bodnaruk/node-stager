@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint semi-style: 0 */
 const cli = require('commander');
 const Commander = require('../lib/Commander');
 
@@ -19,7 +20,7 @@ cli
 ;
 
 cli
-  .command('deploy <repository> <branch>')
+  .command('deploy <repository> <branch> [args...]')
   .alias('d')
   .description('Deploy branch')
   .action(Commander.deploy)
@@ -66,6 +67,14 @@ cli
   .alias('su')
   .description('Configure automate startup for pm2 instances')
   .action(Commander.startup)
+;
+
+cli
+  .command('plugin <name> [args...]')
+  .allowUnknownOption()
+  .alias('p')
+  .description('Run pre-installed plugin')
+  .action(Commander.plugin)
 ;
 
 cli.parse(process.argv);
