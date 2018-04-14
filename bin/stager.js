@@ -2,9 +2,24 @@
 /* eslint semi-style: 0 */
 const cli = require('commander');
 const Commander = require('../lib/Commander');
+const path = require('path');
+const {
+  test,
+  touch,
+  rm,
+} = require('shelljs');
 
 Commander.ensure('git');
 Commander.ensure('pm2');
+
+const lockFile = path.join(__dirname, '../stager.lock');
+
+if (test('-f', lockFile)) {
+  console.error('Stager process already running. Please try later');
+  process.exit();
+}
+
+touch(lockFile);
 
 cli
   .version('1.0.0')
@@ -80,3 +95,12 @@ cli
 ;
 
 cli.parse(process.argv);
+
+function cleanLockFile() {
+  rm('-f', lockFile);
+  process.exit(1);
+}
+
+process.on('exit', cleanLockFile);
+process.on('SIGINT', cleanLockFile);
+process.on('uncaughtException', cleanLockFile);
