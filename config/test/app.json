@@ -8,14 +8,5 @@
     "start": 10000,
     "end": 101000
   },
-  "deploy": {
-    "before": [
-      "ll",
-      "pm2 -version"
-    ],
-    "after": [
-      "ls",
-      "pm2 list"
-    ]
-  }
+  "deploy": {}
 }

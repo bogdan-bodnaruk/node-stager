@@ -14,8 +14,8 @@ class Composer {
 
   install() {
     Logger.proggress('Starting installing php packages...');
-    const { stderr } = exec('composer install');
-    if (stderr) {
+    const { stderr, code } = exec('composer install');
+    if (stderr && code !== 0) {
       Logger.error(`Error has happened while installing composer packages: ${stderr}`);
     }
 

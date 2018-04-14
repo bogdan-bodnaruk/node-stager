@@ -1,7 +1,8 @@
 {
-  "cwd"         : "~/Projects/test_dir/",
-  "script"      : "/index.js",
+  "cwd"         : "/home/bbodnar/Projects/",
+  "script"      : "./index.js",
   "watch"       : false,
+  "mode"        : "fork",
   "instances"   : 1,
   "max_memory_restart" : "150M",
   "env": {

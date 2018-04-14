@@ -27,7 +27,7 @@ cli
 ;
 
 cli
-  .command('remove [repository] [branch]')
+  .command('remove <repository> [branch]')
   .option('-a, --all', 'Remove all')
   .alias('del')
   .description('Delete all instances')
@@ -42,14 +42,16 @@ cli
 ;
 
 cli
-  .command('prune <repository>')
+  .command('prune [repository]')
+  .option('-a, --all', 'Prune all')
   .alias('p')
   .description('Prune unused instances')
   .action(Commander.prune)
 ;
 
 cli
-  .command('update <repository> <branch>')
+  .command('update [repository] [branch]')
+  .option('-a, --all', 'Update all instances in all repositories')
   .alias('u')
   .description('Update deployed branch')
   .action(Commander.update)
