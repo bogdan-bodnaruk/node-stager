@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /* eslint semi-style: 0 */
+process.title = 'Stager';
+
 const cli = require('commander');
 const Commander = require('../lib/Commander');
 
 Commander.ensure('git');
-Commander.ensure('pm2');
+// Commander.ensure('pm2');
 
 cli
   .version('1.0.0')

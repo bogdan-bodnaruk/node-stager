@@ -18,7 +18,7 @@
     "commander": "^2.11.0",
     "deep-assign": "^2.0.0",
     "find-free-port": "^1.2.0",
-    "pm2": "^2.10.1",
+    "pm2": "^2.10.2",
     "shelljs": "^0.7.8",
     "template-format": "^1.2.0"
   },
