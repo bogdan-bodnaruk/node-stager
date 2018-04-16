@@ -4,8 +4,8 @@ const Logger = require('../../lib/Logger');
 const format = require('template-format');
 
 class ParseIni {
-  constructor() {
-    this.config = global.config;
+  constructor(config) {
+    this.config = config;
   }
 
   index() {

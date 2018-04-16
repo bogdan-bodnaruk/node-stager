@@ -2,11 +2,19 @@
   "git": "git@bitbucket.org:zetyara/test.git",
   "defaultBranch": "master",
   "pruneOnDeployOrUpdate": true,
-  "apache": true,
-  "domain": "test.com",
-  "ports": {
-    "start": 10000,
-    "end": 101000
+  "apache": {
+    "enabled": true,
+    "path": "/etc/apache2/sites-dynamic/",
+    "template": "vhost.conf",
+    "domain": "test.com"
+  },
+  "pm2": {
+    "enabled": true,
+    "configFile": "pm2.json",
+    "portsRange": {
+      "start": 10000,
+      "end": 10100
+    }
   },
   "deploy": {}
 }

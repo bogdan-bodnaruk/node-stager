@@ -4,8 +4,8 @@ const {
 const Logger = require('../../lib/Logger');
 
 class Composer {
-  constructor() {
-    this.config = global.config;
+  constructor(config) {
+    this.config = config;
   }
 
   index() {
