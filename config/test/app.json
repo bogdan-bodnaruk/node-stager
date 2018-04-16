@@ -2,6 +2,7 @@
   "git": "git@bitbucket.org:zetyara/test.git",
   "defaultBranch": "master",
   "pruneOnDeployOrUpdate": true,
+  "path": "/home/bbodnar/Projects/",
   "apache": {
     "enabled": true,
     "path": "/etc/apache2/sites-dynamic/",
