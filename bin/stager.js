@@ -1,9 +1,16 @@
 #!/usr/bin/env node
 /* eslint semi-style: 0 */
-process.title = 'Stager';
-
 const cli = require('commander');
 const Commander = require('../lib/Commander');
+const Logger = require('../lib/Logger');
+const { exec } = require('shelljs');
+
+const stager = exec('pgrep Stager', { silent: true });
+if (stager.stdout) {
+  Logger.error('Only one instance of Stager can be started at the moment!');
+}
+
+process.title = 'Stager';
 
 Commander.ensure('git');
 
