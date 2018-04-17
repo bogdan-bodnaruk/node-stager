@@ -22,7 +22,10 @@ class ParseIni {
       const inputFile = path.join(this.config.appDir, this.config.input);
       const outputFile = path.join(this.config.appDir, this.config.output);
       const input = fs.readFileSync(inputFile, "utf8");
-      const content = format(input, this.config, { skipUndefined: true });
+      const content = format(input, this.config, {
+        skipUndefined: true,
+        regex: /{(\w*?)}/g,
+      });
 
       fs.writeFileSync(outputFile, content, (err) => {
         if (err) {
