@@ -24,7 +24,7 @@ class ParseIni {
       const input = fs.readFileSync(inputFile, "utf8");
       const content = format(input, this.config, {
         skipUndefined: true,
-        regex: /{(\w*?)}/g,
+        regex: /{([a-zA-Z0-9.]*?)}/g,
       });
 
       fs.writeFileSync(outputFile, content, (err) => {
