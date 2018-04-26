@@ -17,5 +17,16 @@
       "end": 10100
     }
   },
-  "deploy": {}
+  "hooks": {
+    "deploy": {
+      "before": [],
+      "after": []
+    },
+    "update": {
+      "before": [],
+      "after": []
+    },
+    "runDeployOnly": false,
+    "runUpdateOnly": false
+  }
 }
