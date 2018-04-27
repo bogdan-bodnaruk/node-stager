@@ -59,7 +59,7 @@ cli
 
 cli
   .command('update [repository] [branch] [args...]')
-  .option('-a, --all', 'Update all instances in all repositories')
+  .option('-a, --all [param]', 'Update all instances in all repositories')
   .alias('u')
   .description('Update deployed branch')
   .action(Commander.update)
