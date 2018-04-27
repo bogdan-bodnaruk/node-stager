@@ -4,8 +4,8 @@ const Logger = require('../../lib/Logger');
 const format = require('template-format');
 
 class ParseIni {
-  constructor() {
-    this.config = global.config;
+  constructor(config) {
+    this.config = config;
   }
 
   index() {
@@ -22,7 +22,10 @@ class ParseIni {
       const inputFile = path.join(this.config.appDir, this.config.input);
       const outputFile = path.join(this.config.appDir, this.config.output);
       const input = fs.readFileSync(inputFile, "utf8");
-      const content = format(input, this.config);
+      const content = format(input, this.config, {
+        skipUndefined: true,
+        regex: /{([a-zA-Z0-9.]*?)}/g,
+      });
 
       fs.writeFileSync(outputFile, content, (err) => {
         if (err) {

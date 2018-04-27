@@ -1,12 +1,32 @@
 {
   "git": "git@bitbucket.org:zetyara/test.git",
   "defaultBranch": "master",
-  "pruneOnDeployOrUpdate": true,
-  "apache": true,
-  "domain": "test.com",
-  "ports": {
-    "start": 10000,
-    "end": 101000
+  "prune": true,
+  "path": "/home/bbodnar/Projects/",
+  "apache": {
+    "enabled": true,
+    "path": "/etc/apache2/sites-dynamic/",
+    "template": "vhost.conf",
+    "domain": "test.com"
   },
-  "deploy": {}
+  "pm2": {
+    "enabled": true,
+    "configFile": "pm2.json",
+    "portsRange": {
+      "start": 10000,
+      "end": 10100
+    }
+  },
+  "hooks": {
+    "deploy": {
+      "before": [],
+      "after": []
+    },
+    "update": {
+      "before": [],
+      "after": []
+    },
+    "runDeployOnly": false,
+    "runUpdateOnly": false
+  }
 }

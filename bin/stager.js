@@ -2,9 +2,17 @@
 /* eslint semi-style: 0 */
 const cli = require('commander');
 const Commander = require('../lib/Commander');
+const Logger = require('../lib/Logger');
+const { exec } = require('shelljs');
+
+const stager = exec('pgrep Stager', { silent: true });
+if (stager.stdout) {
+  Logger.error('Only one instance of Stager can be started at the moment!');
+}
+
+process.title = 'Stager';
 
 Commander.ensure('git');
-Commander.ensure('pm2');
 
 cli
   .version('1.0.0')
@@ -50,8 +58,8 @@ cli
 ;
 
 cli
-  .command('update [repository] [branch]')
-  .option('-a, --all', 'Update all instances in all repositories')
+  .command('update [repository] [branch] [args...]')
+  .option('-a, --all [param]', 'Update all instances in all repositories')
   .alias('u')
   .description('Update deployed branch')
   .action(Commander.update)
